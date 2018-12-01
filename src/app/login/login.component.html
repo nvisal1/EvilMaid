@@ -1,0 +1,27 @@
+<div class="auth-container">
+  <div class="login-container">
+    <div class="company-name">EVIL MAID</div>
+    <div class="login-item">
+      <form (submit)="login()" class="form form-login">
+        <div class="form-field">
+          <div><span class="hidden">Username</span></div>
+          <input type = "text" name ="email" id="login-username"  class="form-input" placeholder="Email">
+        </div>
+
+        <div class="form-field">
+          <div><span class="hidden">Password</span></div>
+          <input type = "password" name = "password" id="login-password" class="form-input" placeholder="Password">
+        </div>
+
+        <div class="form-field">
+          <input type="submit" value="Log in">
+        </div>
+      </form>
+      <div class="wrapper-link">
+        <div class="register-link" routerLink="../register">
+          Register
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

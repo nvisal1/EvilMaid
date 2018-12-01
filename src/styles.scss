@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+$red : #c0392b;
+
+@font-face {
+    font-family: 'Kumar One Outline', cursive;
+    src: url(/assets/fonts/Kumar_One_Outline/KumarOneOutline-Regular.ttf);
+  }
+
+  @mixin title{
+      font-family: 'Kumar One Outline';
+  }
+
+  @mixin font{
+      font-family: 'Slabo 27px';
+  }
+
+  @font-face {
+    font-family: 'Slabo 27px', serif;
+    src: url(/assets/fonts/Slabo_27px/Slabo27px-Regular.ttf);
+  }
+

@@ -1,0 +1,185 @@
+@import "~src/styles.scss";
+
+.auth-container {
+  background-image: url("/assets/images/light.jpeg");
+
+  //center and scale the image
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "lato", sans-serif;
+  color: black;
+}
+/*this media query checks to see if the browser window is smaller than the image, and uses a combo 
+*percentage-left and negative left margin to keep it centered regardless.
+*/
+@media screen and (max-width: 1024px) {
+  /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px; /* 50% */
+  }
+}
+
+.company-name {
+  @include title;
+  color: $red;
+  font-size: 45px;
+  text-align: center;
+  padding: 40px 20px 0;
+  margin: 0;
+}
+
+/*this media query checks to see if the browser window is smaller than the image, and uses a combo 
+*percentage-left and negative left margin to keep it centered regardless.
+*/
+@media screen and (max-width: 1024px) {
+  /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px; /* 50% */
+  }
+}
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left: auto; /* 1 */
+
+  max-width: 960px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left: 10px; /* 3 */
+}
+.login-container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 450px;
+  overflow-y: scroll;
+}
+
+.login-item {
+  color: #ffff;
+  padding: 25px 25px 0;
+  margin: 20px 20px 0;
+  border-radius: 3px;
+}
+
+input {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+.form input[type="password"],
+.form input[type="text"],
+.form input[type="submit"] {
+  width: 100%;
+}
+
+.form-login label,
+.form-login input[type="text"],
+.form-login input[type="password"],
+.form-login input[type="submit"] {
+  border-radius: 0.25rem;
+  padding: 1rem;
+  color: #3a3f44;
+}
+
+.form-login label {
+  background-color: #222222;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.form-login input[type="text"],
+.form-login input[type="password"] {
+  @include font;
+  background-color: #ffffff;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.555);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.form-login input[type="text"]:focus,
+.form-login input[type="text"]:hover,
+.form-login input[type="password"]:focus,
+.form-login input[type="password"]:hover {
+  background-color: #eeeeee;
+}
+
+.form-login input[type="submit"] {
+  background-color: $red;
+  color: #eee;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.form-login input[type="submit"]:focus,
+.form-login input[type="submit"]:hover {
+  color: $red;
+  cursor: pointer;
+  background-color: white;
+}
+
+.form-field {
+  @include font;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.wrapper-link {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+//Links
+.register-link {
+  @include font;
+  color: white;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+
+  //When the mouse hovers over the text, text will be underlined
+  &:hover {
+    text-decoration: underline;
+  }
+}
