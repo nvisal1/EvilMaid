@@ -15,10 +15,18 @@ export class AuthService {
     username: string,
     password: string
   ): Promise<any>  {
-    const submission = {
-      username: JSON.parse(username),
-      password: JSON.parse(password)
-    };
+    let submission;
+    if (username.includes('{') && password.includes('{')) {
+      submission = {
+        username: JSON.parse(username),
+        password: JSON.parse(password)
+      };
+    } else {
+      submission = {
+        username: username,
+        password: password
+      };
+    }
     return this.http
       .post(environment.apiURL + '/users/tokens', submission, {
         withCredentials: true
@@ -30,8 +38,9 @@ export class AuthService {
           return this.user;
         },
         error => {
-          console.log(error);
-          throw error;
+          if (error.status === 400) {
+            return error.error;
+          }
         }
       );
   }

@@ -1,6 +1,9 @@
 <div class="auth-container">
   <div class="login-container">
     <div class="company-name">EVIL MAID</div>
+    <div *ngIf="error !== null" class="error">
+      {{  error }}
+    </div>
     <div class="login-item">
       <form (submit)="login()" class="form form-login">
         <div class="form-field">

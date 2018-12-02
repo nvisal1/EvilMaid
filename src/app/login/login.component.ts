@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  error: String;
+
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -23,6 +25,8 @@ export class LoginComponent implements OnInit {
     const auth = await this.auth.login(this.authInfo.username, this.authInfo.password);
     if (auth['token']) {
       this.router.navigate(['/home']);
+    } else {
+      this.error = auth;
     }
   }
 
